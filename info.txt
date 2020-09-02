@@ -108,3 +108,92 @@ Si la función no tiene ningún parámetro, únicamente se escribe:
 
 _Nombre de la función(); _
 
+
+
+clase 6
+
+
+¿Cuándo utilizar una función declarativa y una expresiva?
+
+Cuando hablamos de funciones en JavaScript, tenemos dos tipos de funciones: Funciones Declarativas (function declaration / function statement) y Expresiones de función (function expression / funciones anónimas).
+
+Funciones Declarativas:
+En las funciones declarativas, utilizamos la palabra reservada function al inicio para poder declarar la función:
+
+function saludar(nombre) {
+	console.log(`Hola ${nombre}`);
+}
+
+saludar('Diego');
+
+Expresión de función:
+En la expresión de función, la declaración se inicia con la palabra reservada var, donde se generará una variable que guardará un función anónima.
+
+var nombre = function(nombre){
+    console.log(`Hola ${nombre}`)
+}
+
+nombre(‘Diego’);
+
+En la expresión de función, la función podría o no llevar nombre, aunque es más común que se hagan anónimas.
+
+Diferencias:
+A las funciones declarativas se les aplica hoisting, y a la expresión de función, no. Ya que el hoisting solo se aplica en las palabras reservadas var y function.
+
+Lo que quiere decir que con las funciones declarativas, podemos mandar llamar la función antes de que ésta sea declarada, y con la expresión de función, no, tendríamos que declararla primero, y después mandarla llamar.
+
+
+clase 7
+
+¿Qué es Hoisting?
+En JavaScript, las declaraciones (por ejemplo, de variables o funciones) se mueven al principio de su scope o ámbito. Este comportamiento se conoce como hoisting y es muy importante tenerlo en cuenta a la hora de programar para prevenir posibles errores.
+
+Las funciones siempre se mueven arriba del scope. Por lo tanto, podemos elegir donde declararlas y usarlas.
+La declaración de las variables se mueven arriba del scope, pero no la asignación. Antes de usar una variable, habrá que crearla y asignarla.
+
+clase 8
+
+Coerción: forma en la que podemos cambiar un tipo de valor hacia otro tipo de valos. existen dos tipos de coerción:
+Implicitas e explicitas. Implicita se refiere a que el lenguaje nos ayuda y cambios de un tipo de valor a otro.
+explicita: es cuando nosotros obligamos a hacer el cambio de un tipo de valor a otro.
+ej: coerción implicita:
+var a = 4 + “7” = 47 //al usar el signo “+” y encontrar un dato de tipo string, JS supone que quieres concatenar, por lo tanto, hace una coerción implicita y cambio el tipo de dato “a” a string y por eso devuelve un 47.
+var b = 4 * “7” = 28 // esto tambien es una coerción implicita, pero como ya no usamos el signo “+” que indica concatenación, JS supone que realmente no queriamos colocar el “7” como string, asi que hace el cambio a number y ejecuta la operación, lo que da como resultado el 28
+
+Ej. coerción explicita
+se usan metodos para hacer la coerción explicita:
+a = 20; // tipo number pero queremos convertirlo en cadena, entonces:
+b = String(a) /con este metodo se convierte a cadena de texto.
+
+clase 9
+
+¿Que tipos por default son verdaderos y falsos?
+
+Usamos la función de JS que es Boolean() dentro del paréntesis ponemos el valor y nos dice si el mismo el False o True.
+
+–> Falsy
+
+Boolean() —> sin ningun valor es false
+Boolean(0) —> false
+Boolean(null) —> false
+Boolean(NaN) —> false // NaN es Not and Number
+Boolean(Undefined) —> false
+Boolean(false) —> false
+Boolean("") —> false
+–> Truthy
+
+Boolean(1) —> true //cualquier numero que no sea igual a cero es true
+Boolean(“a”) —> true
+Boolean(" ") —> true // siendo un espacio el valor es true
+Boolean([]) —> true // un array nos da un true
+Boolean({}) —> true // un objeto nos da el valor de true
+Boolean(function() {}) —> true //una funcion tambien es true
+Boolean(true) —> true
+Todo esto lo vamos a usar en condiciones esto valida si es verdadero o falso para ejecutar cierta acción.
+
+Enlaces a documentación en mozilla de Truthy y Falsy:
+https://developer.mozilla.org/es/docs/Glossary/Falsy
+https://developer.mozilla.org/es/docs/Glossary/Truthy
+
+
+clase 10
